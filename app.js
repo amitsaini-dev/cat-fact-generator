@@ -10,3 +10,8 @@ async function getCatFact() {
     let fact = await axios.get(api);
     return fact.data.fact;
 }
+
+window.addEventListener("load", async () => {
+    let fact = await getCatFact();
+    dispfact.innerHTML = fact;
+});
