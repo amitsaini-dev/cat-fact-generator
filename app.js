@@ -7,8 +7,12 @@ btn.addEventListener("click", async function () {
 })
 
 async function getCatFact() {
-    let fact = await axios.get(api);
-    return fact.data.fact;
+    try {
+        let fact = await axios.get(api);
+        return fact.data.fact;
+    } catch (error) {
+        return "Failed to fetch cat fact. Please try again.";
+    }
 }
 
 window.addEventListener("load", async () => {
