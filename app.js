@@ -8,6 +8,7 @@ btn.addEventListener("click", async function () {
 
 async function getCatFact() {
     try {
+        dispfact.innerHTML = "Loading...";
         let fact = await axios.get(api);
         return fact.data.fact;
     } catch (error) {
